@@ -26,7 +26,7 @@ public class BankAccount extends Exception {
             throw new LimitException("Запрашиваемая сумма больше чем остаток", sum);
         }
         amount -= sum;
-        System.out.println("Снимаем со счета " + sum);
+        System.out.println("Снимаем " + sum+"сом");
 
     }
 }

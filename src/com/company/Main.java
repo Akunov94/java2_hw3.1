@@ -1,7 +1,4 @@
 package com.company;
-
-import java.util.Arrays;
-
 /*
 d)  Написать Main класс где бы создавался счет клиента. Положить 10 000 сом на счет.
 e)  Затем попытаться снять через бесконечный цикл, каждую итерацию по 6000 сом, при этом отлавливать исключение
@@ -21,7 +18,7 @@ public class Main {
             } catch (LimitException e) {
                 System.out.println(e.getMessage());
                 account.withDraw((int) account.getAmount());
-                System.out.println("Остаток " + account.getAmount() + "cом");
+                System.out.println("Баланс " + account.getAmount() + "cом");
                 break;
             }
         }
