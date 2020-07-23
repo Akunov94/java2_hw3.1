@@ -7,19 +7,26 @@ c)  Также метод withDraw() может сгенерировать ис�
 остаток денег на счете.
 */
 public class BankAccount extends Exception {
-    private double amount;
-    public BankAccount(){
+    double amount;
+
+    public BankAccount() {
         amount = 0;
     }
+
     double getAmount() {
         return amount;
     }
+
     void deposit(double sum) {
         amount += sum;
     }
+
     void withDraw(int sum) throws LimitException {
-        if (sum < amount || amount ==sum) {
-            amount -= sum;
-        }else throw new LimitException("Запрашиваемая сумма больше чем остаток",getAmount());
+        if (sum > amount) {
+            throw new LimitException("Запрашиваемая сумма больше чем остаток", sum);
+        }
+        amount -= sum;
+        System.out.println("Снимаем со счета " + sum);
+
     }
 }

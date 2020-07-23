@@ -4,7 +4,7 @@ package com.company;
 double remainingAmount) и методом getRemainingAmount().
 */
 public class LimitException extends Exception{
-    private double remainingAmount;
+     double remainingAmount;
 
     public LimitException(String message, double remainingAmount) {
         super(message);

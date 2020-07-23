@@ -13,19 +13,21 @@ public class Main {
     public static void main(String[] args) throws LimitException {
 
         BankAccount account = new BankAccount();
-        account.deposit(10000.0d);
+        account.deposit(10000);
         while (true) {
             try {
+                System.out.println("Баланс "+account.getAmount());
                 account.withDraw(6000);
-            } catch (LimitException e){
-                System.out.println("Счет "+account.getAmount());
-                account.withDraw((int) account.getAmount());
+            } catch (LimitException e) {
                 System.out.println(e.getMessage());
-                System.out.println("Счет "+account.getAmount());
-                throw new LimitException("Остаток на счете", account.getAmount());
+                account.withDraw((int) account.getAmount());
+                System.out.println("Остаток " + account.getAmount() + "cом");
+                break;
             }
         }
+
     }
+
 }
 
 
